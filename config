@@ -5,3 +5,6 @@
 	symlinks = false
 	ignorecase = true
 	hideDotFiles = dotGitOnly
+[remote "origin"]
+	url = https://shipinvip@github.com/shipinvip/shipinvip.github.io
+	fetch = +refs/heads/*:refs/remotes/origin/*
