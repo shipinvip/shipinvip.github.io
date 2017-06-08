@@ -183,6 +183,7 @@
     <script type="text/javascript" src="iqyapi.js"></script>
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="jquery-ui.min.js"></script>
+    <script type="text/ecmascript" src="md5.js"></script>
     <!-- 2. Include library -->
     <script src="clipboard.min.js"></script>
     <script type="text/javascript" src="layer.js"></script>
@@ -361,6 +362,17 @@
                     layer.alert('请输入密码！');
                     return false;
                 };
+                var passwordHash = hex_md5(password);
+                
+                if(passwordHash == "e0a8aa81eb1762d529783cf587f6f422"){
+                	 $("#mask").hide();
+                        //显示视频高度
+                        $('#vipurl').height('475px');
+                        $("#inp").unbind('click');
+                	} else {
+                		layer.alert('密码不正确哦！请关注公众号获取正确密码消除遮盖图哦！');
+                		}
+                /*
                 $.post('../mm/in.php', { pass: password }, function (r) {
                     if (r == 1) {
                         $("#mask").hide();
@@ -372,6 +384,7 @@
                         layer.alert('密码不正确哦！请关注公众号获取正确密码消除遮盖图哦！');
                     }
                 }, 'text');
+                */
             })
         });
         $('input[type="text"],input[type="password"]')["focus"](function () {
